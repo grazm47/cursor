@@ -17,12 +17,13 @@ def main():
     print("3. Расширенный ассистент с GigaChat API")
     print("4. Тест API GigaChat")
     print("5. Telegram бот (простая версия)")
-    print("6. Выход")
+    print("6. Telegram бот с AI (полная версия)")
+    print("7. Выход")
     print("=" * 40)
     
     while True:
         try:
-            choice = input("Введите номер (1-6): ").strip()
+            choice = input("Введите номер (1-7): ").strip()
             
             if choice == "1":
                 print("\n🚀 Запуск демо-ассистента...")
@@ -48,10 +49,18 @@ def main():
                 print("✅ Бот запущен! Найдите его в Telegram")
                 break
             elif choice == "6":
+                print("\n🚀 Запуск Telegram бота с AI (полная версия)...")
+                print("🧠 Интеграция с GigaChat AI активна!")
+                print("📱 Бот будет работать в фоновом режиме")
+                print("🛑 Для остановки используйте: pkill -f telegram_bot_ai_full.py")
+                os.system("python3 telegram_bot_ai_full.py &")
+                print("✅ Бот с AI запущен! Найдите его в Telegram")
+                break
+            elif choice == "7":
                 print("\n👋 До свидания!")
                 break
             else:
-                print("❌ Неверный выбор. Введите 1, 2, 3, 4, 5 или 6.")
+                print("❌ Неверный выбор. Введите 1, 2, 3, 4, 5, 6 или 7.")
                 
         except KeyboardInterrupt:
             print("\n\n👋 До свидания!")
