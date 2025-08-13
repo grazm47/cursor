@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ассистент: сетка-рабица (оцинкованная)</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Ассистент по продаже сетки-рабицы</h1>
+      <button id="resetBtn" title="Сбросить диалог">Сброс</button>
+    </header>
+
+    <main id="chat">
+      <div id="messages" class="messages"></div>
+      <div id="suggestions" class="suggestions"></div>
+    </main>
+
+    <footer>
+      <form id="form">
+        <input id="input" type="text" autocomplete="off" placeholder="Напишите сообщение..." />
+        <button type="submit">Отправить</button>
+      </form>
+    </footer>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

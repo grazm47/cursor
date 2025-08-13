@@ -1,0 +1,33 @@
+{
+  "currency": "₽",
+  "roll_length_m": 10.0,
+  "base_price_per_m2": 260.0,
+  "wire_diameter_multipliers": {
+    "2.0": 0.85,
+    "2.5": 1.0,
+    "3.0": 1.25,
+    "3.5": 1.45
+  },
+  "cell_size_multipliers": {
+    "40": 1.15,
+    "50": 1.0,
+    "60": 0.9
+  },
+  "coating_multipliers": {
+    "electro": 1.0,
+    "hot_dip": 1.12
+  },
+  "post_spacing_m": 2.5,
+  "accessories": {
+    "post_price_per_piece": 480.0,
+    "brace_price_per_piece": 350.0,
+    "tension_wire_price_per_m": 22.0,
+    "tensioner_price_per_piece": 180.0,
+    "binding_wire_price_per_m": 6.0
+  },
+  "shipping": {
+    "base_rate_per_km": 35.0,
+    "minimum_shipping_cost": 2000.0,
+    "free_shipping_threshold": 50000.0
+  }
+}
