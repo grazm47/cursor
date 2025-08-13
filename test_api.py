@@ -16,12 +16,12 @@ def test_gigachat_api():
     print("🧪 Тестирование подключения к API GigaChat...")
     
     # API ключ
-    api_key = "ZDZjNGMzZjktMDhmYi00ZWE3LTk5MDMtYWE0OGZiZjZjMGU1OmMyOTk0MmE0LWM5NjgtNDEzZi05NjEzLTg0MWIxNTI2ZDAxMQ=="
+    api_key = "d6c4c3f9-08fb-4ea7-9903-aa48fbf6c0e5"
     
     try:
-        # Декодируем API ключ
-        decoded_key = base64.b64decode(api_key).decode('utf-8')
-        print(f"✅ API ключ успешно декодирован")
+        # Используем API ключ напрямую
+        decoded_key = api_key
+        print(f"✅ API ключ готов к использованию")
         
         # Базовый URL
         base_url = "https://gigachat.devices.sberbank.ru/api/v1"

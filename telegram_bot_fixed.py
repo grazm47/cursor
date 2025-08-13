@@ -16,7 +16,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 class DobrynyaFixedBot:
     def __init__(self):
         # GigaChat API настройки
-        self.api_key = "ZDZjNGMzZjktMDhmYi00ZWE3LTk5MDMtYWE0OGZiZjZjMGU1OmMyOTk0MmE0LWM5NjgtNDEzZi05NjEzLTg0MWIxNTI2ZDAxMQ=="
+        self.api_key = "d6c4c3f9-08fb-4ea7-9903-aa48fbf6c0e5"
         self.base_url = "https://gigachat.devices.sberbank.ru/api/v1"
         self.access_token = None
         self.token_expires = 0
