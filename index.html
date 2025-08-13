@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СетКомПлюс - Сетка рабица из оцинкованной проволоки</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-grip-horizontal"></i>
+                    <span>СетКомПлюс</span>
+                </div>
+                <nav class="nav">
+                    <a href="#catalog">Каталог</a>
+                    <a href="#calculator">Калькулятор</a>
+                    <a href="#about">О нас</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn-chat" onclick="toggleChat()">
+                        <i class="fas fa-comments"></i>
+                        Консультация
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Качественная сетка рабица из оцинкованной проволоки</h1>
+                <p class="hero-subtitle">Долговечность, надежность и доступные цены. Доставка по всей России.</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Антикоррозийное покрытие</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-truck"></i>
+                        <span>Быстрая доставка</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tools"></i>
+                        <span>Готова к установке</span>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="scrollToSection('catalog')">
+                    Выбрать сетку
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2>Каталог сетки рабица</h2>
+            <div class="catalog-grid" id="catalogGrid">
+                <!-- Каталог будет заполнен JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <h2>Калькулятор стоимости</h2>
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label>Размер ячейки (мм):</label>
+                        <select id="meshSize">
+                            <option value="25">25×25</option>
+                            <option value="35">35×35</option>
+                            <option value="40">40×40</option>
+                            <option value="50" selected>50×50</option>
+                            <option value="60">60×60</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Высота сетки (м):</label>
+                        <select id="height">
+                            <option value="1.0">1.0</option>
+                            <option value="1.2">1.2</option>
+                            <option value="1.5" selected>1.5</option>
+                            <option value="1.8">1.8</option>
+                            <option value="2.0">2.0</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Длина (м):</label>
+                        <input type="number" id="length" value="10" min="1" max="1000">
+                    </div>
+                    <div class="form-group">
+                        <label>Диаметр проволоки (мм):</label>
+                        <select id="wireSize">
+                            <option value="1.4">1.4</option>
+                            <option value="1.6">1.6</option>
+                            <option value="1.8" selected>1.8</option>
+                            <option value="2.0">2.0</option>
+                            <option value="2.5">2.5</option>
+                        </select>
+                    </div>
+                    <button class="btn-calculate" onclick="calculatePrice()">
+                        Рассчитать стоимость
+                    </button>
+                </div>
+                <div class="calculator-result" id="calculatorResult">
+                    <h3>Результат расчета</h3>
+                    <div class="result-item">
+                        <span>Площадь:</span>
+                        <span id="area">0 м²</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Цена за м²:</span>
+                        <span id="pricePerSqm">0 ₽</span>
+                    </div>
+                    <div class="result-item total">
+                        <span>Общая стоимость:</span>
+                        <span id="totalPrice">0 ₽</span>
+                    </div>
+                    <button class="btn-order" onclick="openOrderForm()">
+                        Заказать
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Высокое качество</h3>
+                    <p>Используем только качественную оцинкованную проволоку с защитой от коррозии</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-ruble-sign"></i>
+                    <h3>Честные цены</h3>
+                    <p>Работаем напрямую с производителем, без наценок посредников</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Быстрая доставка</h3>
+                    <p>Доставляем по Москве и области в течение 1-2 дней</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Гарантия качества</h3>
+                    <p>Предоставляем гарантию на всю продукцию сроком до 5 лет</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p>+7 (495) 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@setkomplus.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Адрес</h4>
+                            <p>Москва, ул. Промышленная, 25</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Режим работы</h4>
+                            <p>Пн-Пт: 9:00-18:00<br>Сб: 9:00-15:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="submitOrder(event)">
+                    <h3>Заказать звонок</h3>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <textarea placeholder="Комментарий (необязательно)"></textarea>
+                    <button type="submit" class="btn-primary">Заказать звонок</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Assistant -->
+    <div id="chatContainer" class="chat-container">
+        <div class="chat-header">
+            <h3>Консультант по сетке рабица</h3>
+            <button onclick="toggleChat()" class="chat-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                Здравствуйте! Я помогу вам выбрать подходящую сетку рабица. Какой объект планируете ограждать?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Напишите ваш вопрос...">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Оформление заказа</h3>
+                <button onclick="closeOrderModal()" class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="order-form" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label>Ваше имя:</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Телефон:</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Адрес доставки:</label>
+                    <textarea required></textarea>
+                </div>
+                <div class="order-summary" id="orderSummary">
+                    <!-- Заполняется JavaScript -->
+                </div>
+                <button type="submit" class="btn-primary">Оформить заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
